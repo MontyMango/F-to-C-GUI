@@ -15,16 +15,14 @@ class Temperature_Converter:
 
 
         # Name Row
-        self.name_label = tkinter.Label(self.name_frame,text="Cameron Harter",relief='solid')
+        self.name_label = tkinter.Label(self.name_frame,text="MontyMango",relief='solid')
 
         # Pack Name Row
         self.name_label.pack()
-
         
         # Fahrenheit Row
         self.fahrenheit_label = tkinter.Label(self.fahrenheit_frame,text="Fahrenheit or Celcius:")
         self.Far_to_Cel = tkinter.Button(self.fahrenheit_frame,text='F° -> C°', command=self.F_to_C)
-
 
         # Pack Fahrenheit Row
         self.fahrenheit_label.pack(side='left')
@@ -37,7 +35,6 @@ class Temperature_Converter:
         # Pack Celsius Row
         self.number_input.pack(padx=(40,29),side='left')
         self.Cel_to_Far.pack(padx=(0,25),side='left')
-
         
         # Buttons Row
         self.Quit = tkinter.Button(self.button_frame,text='Quit',command=self.main_window.destroy)
@@ -46,14 +43,20 @@ class Temperature_Converter:
         self.Quit.pack(side='right')
 
 
+
         # Pack Frames
         self.name_frame.pack(padx=100,pady=(0,15))
         self.fahrenheit_frame.pack()
         self.celsius_frame.pack(pady=(0,15))
         self.button_frame.pack()
 
+
+
         tkinter.mainloop()  # Main loop
 
+
+
+    # Function converts celsius to fahrenheit
     def C_to_F(self):
         try:
             celsius = float(self.number_input.get())
@@ -64,6 +67,9 @@ class Temperature_Converter:
         except ValueError:
             self.Error_Message()
 
+
+
+    # Function converts fahrenheit to celsius
     def F_to_C(self):
         try:
             fahrenheit = float(self.number_input.get())
@@ -74,8 +80,13 @@ class Temperature_Converter:
         except ValueError:
             self.Error_Message()
 
+
+
     def Error_Message(self):
         tkinter.messagebox.showinfo('Error!','The values that you put in didn\'t work.\nPlease try again!')
 
+
+
 if __name__ == '__main__':
     TC = Temperature_Converter()
+    
